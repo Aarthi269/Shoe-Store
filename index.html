@@ -7,8 +7,8 @@
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 </head>
-<body class="bg-white font-sans">
-  <div class="max-w-7xl mx-auto px-4 py-6">
+<body class="bg-white font-sans h-screen">
+  <div class="max-w-auto mx-auto">
 
     <!-- Top Black Navbar -->
     <nav class="bg-black text-white px-6 py-2">
@@ -22,14 +22,14 @@
   
     <!-- Navbar -->
   <header class="border-b shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="max-w-8xl mx-auto px-0 py-4 flex items-center justify-between">
       <!-- Logo -->
       <div class="flex items-center space-x-2">
-        <img src="images\shoe tree logo 2.png" alt="Shoe Tree" class="h-16 w-auto"> <!-- Replace with actual logo path -->
+        <img src="images/shoe tree logo 2.png" alt="Shoe Tree" class="h-16 pr-9 pl-16 w-auto"> <!-- Corrected path slashes too -->
       </div>
 
       <!-- Nav Links -->
-      <nav class="flex space-x-6 text-sm font-medium text-gray-700" x-data="{ open: null }">
+      <nav class="flex space-x-6 text-sm font-medium text-gray-700 pr-24" x-data="{ open: null }">
         <!-- Women Dropdown -->
         <div class="relative" @mouseleave="open = null">
           <button @mouseenter="open = 'women'" class="hover:text-black text-lg flex items-center gap-1">
@@ -79,12 +79,12 @@
     </div>
   </header>
 
-    <h2 class="text-left text-3xl pb-4 font-serif">New Arrivals</h2>
+    <h2 class="text-left text-3xl pb-4 pt-3 pl-16 font-serif font-medium text-center pr-12">New Arrivals</h2>
     <!-- Product Carousel -->
      
     <div class="relative">
        
-      <div class="flex overflow-x-auto space-x-6 pb-4 scroll-smooth">
+      <div class="flex overflow-x-auto space-x-6 pb-4 pl-16 scroll-smooth">
         
         <!-- Product Card -->
         <div class="flex-none w-64 bg-white rounded-lg shadow-sm border p-4">
@@ -159,12 +159,12 @@
       </div>
     </div>
 
-    <h2 class="text-left text-3xl pb-4 font-serif mt-8">Best Sellers</h2>
+    <h2 class="text-left text-3xl pb-4 pl-16 font-serif font-medium text-center pr-12 mt-8">Best Sellers</h2>
     <!-- Product Carousel -->
      
     <div class="relative">
        
-      <div class="flex overflow-x-auto space-x-6 pb-4 scroll-smooth">
+      <div class="flex overflow-x-auto space-x-6 pb-4 pl-16 scroll-smooth">
         
         <!-- Product Card -->
         <div class="flex-none w-64 bg-white rounded-lg shadow-sm border p-4">
@@ -243,11 +243,11 @@
  
 <!-------------------------------------------------->
 
-    <div class="p-4 space-y-6">
+    <div class="p-16 space-y-6">
         <!-- Top Offer Boxes -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-white font-bold">
             <!-- Button 1 -->
-            <button class="bg-[#b2915f] rounded-lg p-6 text-center w-full hover:bg-[#a1814f] transition duration-300">
+            <button class="bg-[#b2915f] rounded-lg p-5 text-center w-full hover:bg-[#a1814f] transition duration-300">
               <p class="text-2xl font-serif">Budget friendly</p>
               <p class="md:text-5xl mt-1 font-bold">UNDER <br> RS 799</p>
             </button>
@@ -287,9 +287,9 @@
 
       <!-------------------------------------------------->
 
-      <div class="p-6">
+      <div class="p-16">
         <!-- Heading -->
-        <h2 class="text-2xl font-bold mb-6">SHOP BY CATEGORY</h2>
+        <h2 class="text-2xl font-bold mb-6 font-serif font-medium text-center">SHOP BY CATEGORY</h2>
       
         <!-- Category Cards Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
@@ -330,9 +330,9 @@
       <!-------------------------------------->
       
       <!-- Top Brands Section -->
-<section class="py-10 px-4">
-    <h2 class="text-3xl font-bold mb-8">TOP BRANDS</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 justify-items-center p-4">
+<section class="py-13 px-4">
+    <h2 class="text-3xl font-bold mb-8 px-16 text-center font-medium pr-12 font-serif ooo">TOP BRANDS</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-0 mb-4 justify-items-center p-1 px-60">
         <a href="https://www.shoetree.io/collections/jove?sort_by=created-descending&filter.v.availability=1&filter.v.price.gte=&filter.v.price.lte=" class="p-4 hover:shadow-lg transition duration-300">
           <img src="images/jove.png" alt="JOVE" class="h-28" />
         </a>
@@ -390,8 +390,12 @@
           </button>
         </div>
         <div class="flex space-x-4">
-          <a href="#" class="text-xl"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="text-xl"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/accounts/login/?hl=en" class="text-xl">
+            <img src="images\instagram2.png" alt="Instagram" class="h-6 w-7 ">
+          </a>
+          <a href="https://www.facebook.com/" class="text-xl">
+            <img src="images\facebook.png" alt="Facebook" class="h-6 w-7" />
+          </a>
         </div>
       </div>
   
