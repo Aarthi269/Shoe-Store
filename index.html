@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shoe Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</head>
+<body class="bg-white font-sans">
+  <div class="max-w-7xl mx-auto px-4 py-6">
+
+    <!-- Top Black Navbar -->
+    <nav class="bg-black text-white px-6 py-2">
+        <div class="flex justify-center">
+          <a href="signin.html" class="hover:underline text-xs">
+            Sign In & Get Flat Rs 250 /- Off on your First Purchase
+          </a>
+        </div>
+      </nav>
+      
+  
+    <!-- Navbar -->
+  <header class="border-b shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="images\shoe tree logo 2.png" alt="Shoe Tree" class="h-16 w-auto"> <!-- Replace with actual logo path -->
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="flex space-x-6 text-sm font-medium text-gray-700" x-data="{ open: null }">
+        <!-- Women Dropdown -->
+        <div class="relative" @mouseleave="open = null">
+          <button @mouseenter="open = 'women'" class="hover:text-black text-lg flex items-center gap-1">
+            Women &#x25BC;
+          </button>
+          <div x-show="open === 'women'" x-transition class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg z-10">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tops</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Shoes</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Accessories</a>
+          </div>
+        </div>
+      
+        <!-- Men Dropdown -->
+        <div class="relative" @mouseleave="open = null">
+          <button @mouseenter="open = 'men'" class="hover:text-black text-lg flex items-center gap-1">
+            Men &#x25BC;
+          </button>
+          <div x-show="open === 'men'" x-transition class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg z-10">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">T-Shirts</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Shoes</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Wallets</a>
+          </div>
+        </div>
+      
+        <!-- Accessories Dropdown -->
+        <div class="relative" @mouseleave="open = null">
+          <button @mouseenter="open = 'accessories'" class="hover:text-black text-lg flex items-center gap-1">
+            Accessories &#x25BC;
+          </button>
+          <div x-show="open === 'accessories'" x-transition class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg z-10">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Belts</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Hats</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sunglasses</a>
+          </div>
+        </div>
+
+        <a href="#" class="hover:opacity-80">
+            <img src="images\search.png" alt="Search" class="h-6 w-6" />
+          </a>
+        
+          <!-- Cart Icon -->
+          <a href="cart.html" class="hover:opacity-80">
+            <img src="images\cart.png" alt="Cart" class="h-6 w-6" />
+          </a>
+      </nav>
+      
+    </div>
+  </header>
+
+    <h2 class="text-left text-3xl pb-4 font-serif">New Arrivals</h2>
+    <!-- Product Carousel -->
+     
+    <div class="relative">
+       
+      <div class="flex overflow-x-auto space-x-6 pb-4 scroll-smooth">
+        
+        <!-- Product Card -->
+        <div class="flex-none w-64 bg-white rounded-lg shadow-sm border p-4">
+          <div class="relative group">
+            <img src="images/1.png" alt="Product" class="rounded-lg group-hover:hidden">
+            <img src="images\1.1.png" alt="Product Hover" class="rounded-lg hidden group-hover:block">
+            <span class="absolute top-2 left-2 bg-green-700 text-white text-xs px-2 py-1 rounded">20% Off</span>
+          </div>
+          <div class="mt-4 text-sm text-gray-600">Cobblerz</div>
+          <div class="font-semibold text-sm">Men Coffee Patterned Loafers</div>
+          <div class="mt-1 text-lg">Rs. 13,599.00</div>
+          <div class="line-through text-gray-400 text-sm">Rs. 16,999.00</div>
+          <button class="w-full mt-3 bg-black text-white py-2 rounded hover:bg-[#a1814f] hover:scale-105 transition duration-300">Choose options</button>
+        </div>
+
+        <!-- Product Card - Sold Out -->
+        <div class="flex-none w-64 bg-white rounded-lg shadow-sm border p-4">
+          <div class="relative group">
+            <img src="images/2.png" alt="Product" class="rounded-lg group-hover:hidden">
+            <img src="images\2.1.png" alt="Product Hover" class="rounded-lg hidden group-hover:block">
+            <span class="absolute top-2 left-2 bg-gray-800 text-white text-xs px-2 py-1 rounded">Sold out</span>
+          </div>
+          <div class="mt-4 text-sm text-gray-600">Ronnie Grey</div>
+          <div class="font-semibold text-sm">Women Black Solid Mid-Top Boots</div>
+          <div class="mt-1 text-lg ">Rs. 4,499.00</div>
+          <div class="line-through text-gray-400 text-sm">Rs. 7,499.00</div>
+          <button class="w-full mt-3 bg-black text-white py-2 rounded hover:bg-[#a1814f] hover:scale-105 transition duration-300">Choose options</button>
+        </div>
+
+        <!-- Product Card -->
+        <div class="flex-none w-64 bg-white rounded-lg shadow-sm border p-4">
+          <div class="relative group">
+            <img src="images/3.png" alt="Product" class="rounded-lg group-hover:hidden">
+            <img src="images\3.1.png" alt="Product Hover" class="rounded-lg hidden group-hover:block">
+            <span class="absolute top-2 left-2 bg-green-700 text-white text-xs px-2 py-1 rounded">25% Off</span>
+          </div>
+          <div class="mt-4 text-sm text-gray-600">JOVE</div>
+          <div class="font-semibold text-sm">Women Yellow Solid Sandals</div>
+          <div class="mt-1 text-lg">Rs. 2,624.00</div>
+          <div class="line-through text-gray-400 text-sm">Rs. 3,499.00</div>
+          <button class="w-full mt-3 bg-black text-white py-2 rounded hover:bg-[#a1814f] hover:scale-105 transition duration-300">Choose options</button>
+        </div>
+
+        <!-- Product Card -->
+        <div class="flex-none w-64 bg-white rounded-lg shadow-sm border p-4">
+          <div class="relative group">
+            <img src="images/4.png" alt="Product" class="rounded-lg group-hover:hidden">
+            <img src="images\4.1.png" alt="Product Hover" class="rounded-lg hidden group-hover:block">
+            <span class="absolute top-2 left-2 bg-green-700 text-white text-xs px-2 py-1 rounded">10% Off</span>
+          </div>
+          <div class="mt-4 text-sm text-gray-600">Ronnie Grey</div>
+          <div class="font-semibold text-sm">Women Black Open Toe Flats</div>
+          <div class="mt-1 text-lg">Rs. 2,699.00</div>
+          <div class="line-through text-gray-400 text-sm">Rs. 2,999.00</div>
+          <button class="w-full mt-3 bg-black text-white py-2 rounded hover:bg-[#a1814f] hover:scale-105 transition duration-300">Choose options</button>
+        </div>
+
+        <!-- Product Card -->
+        <div class="flex-none w-64 bg-white rounded-lg shadow-sm border p-4">
+          <div class="relative group">
+            <img src="images/5.png" alt="Product" class="rounded-lg group-hover:hidden">
+            <img src="images\5.1.png" alt="Product Hover" class="rounded-lg hidden group-hover:block">
+            <span class="absolute top-2 left-2 bg-green-700 text-white text-xs px-2 py-1 rounded">25% Off</span>
+          </div>
+          <div class="mt-4 text-sm text-gray-600">JOVE</div>
+          <div class="font-semibold text-sm">Women Black Checked Mules</div>
+          <div class="mt-1 text-lg">Rs. 2,249.00</div>
+          <div class="line-through text-gray-400 text-sm">Rs. 2,999.00</div>
+          <button class="w-full mt-3 bg-black text-white py-2 rounded hover:bg-[#a1814f] hover:scale-105 transition duration-300">Choose options</button>
+        </div>
+
+      </div>
+    </div>
+
+    <h2 class="text-left text-3xl pb-4 font-serif mt-8">Best Sellers</h2>
+    <!-- Product Carousel -->
+     
+    <div class="relative">
+       
+      <div class="flex overflow-x-auto space-x-6 pb-4 scroll-smooth">
+        
+        <!-- Product Card -->
+        <div class="flex-none w-64 bg-white rounded-lg shadow-sm border p-4">
+          <div class="relative group">
+            <img src="images\6.png" alt="Product" class="rounded-lg group-hover:hidden">
+            <img src="images\6.1.png" alt="Product Hover" class="rounded-lg hidden group-hover:block">
+            <span class="absolute top-2 left-2 bg-green-700 text-white text-xs px-2 py-1 rounded">20% Off</span>
+          </div>
+          <div class="mt-4 text-sm text-gray-600">Ronnie Grey</div>
+          <div class="font-semibold text-sm">Elegant Women Thick Black Solid Mules</div>
+          <div class="mt-1 text-lg">Rs. 3,199.00</div>
+          <div class="line-through text-gray-400 text-sm">Rs. 3,999.00</div>
+          <button class="w-full mt-3 bg-black text-white py-2 rounded rounded hover:bg-[#a1814f] hover:scale-105 transition duration-300">Choose options</button>
+        </div>
+
+        <!-- Product Card - Sold Out -->
+        <div class="flex-none w-64 bg-white rounded-lg shadow-sm border p-4">
+          <div class="relative group">
+            <img src="images\7.png" alt="Product" class="rounded-lg group-hover:hidden">
+            <img src="images\7.1.png" alt="Product Hover" class="rounded-lg hidden group-hover:block">
+            <span class="absolute top-2 left-2 bg-gray-800 text-white text-xs px-2 py-1 rounded">Sold out</span>
+          </div>
+          <div class="mt-4 text-sm text-gray-600">Ronnie Grey</div>
+          <div class="font-semibold text-sm">Women Black Embellished Silver Pumps</div>
+          <div class="mt-1 text-lg ">Rs. 3,839.0</div>
+          <div class="line-through text-gray-400 text-sm">Rs. 4,799.00</div>
+          <button class="w-full mt-3 bg-black text-white py-2 rounded rounded hover:bg-[#a1814f] hover:scale-105 transition duration-300">Choose options</button>
+        </div>
+
+        <!-- Product Card -->
+        <div class="flex-none w-64 bg-white rounded-lg shadow-sm border p-4">
+          <div class="relative group">
+            <img src="images\8.png" alt="Product" class="rounded-lg group-hover:hidden">
+            <img src="images\8.1.png" alt="Product Hover" class="rounded-lg hidden group-hover:block">
+            <span class="absolute top-2 left-2 bg-green-700 text-white text-xs px-2 py-1 rounded">25% Off</span>
+          </div>
+          <div class="mt-4 text-sm text-gray-600">Ronnie Grey</div>
+          <div class="font-semibold text-sm">Women Black Animal Print Embellished Pumps</div>
+          <div class="mt-1 text-lg">Rs. 4,949.00</div>
+          <div class="line-through text-gray-400 text-sm">Rs. 5,499.00</div>
+          <button class="w-full mt-3 bg-black text-white py-2 rounded rounded hover:bg-[#a1814f] hover:scale-105 transition duration-300">Choose options</button>
+        </div>
+
+        <!-- Product Card -->
+        <div class="flex-none w-64 bg-white rounded-lg shadow-sm border p-4">
+          <div class="relative group">
+            <img src="images\9.png" alt="Product" class="rounded-lg group-hover:hidden">
+            <img src="images\9.1.png" alt="Product Hover" class="rounded-lg hidden group-hover:block">
+            <span class="absolute top-2 left-2 bg-green-700 text-white text-xs px-2 py-1 rounded">10% Off</span>
+          </div>
+          <div class="mt-4 text-sm text-gray-600">Ronnie Grey</div>
+          <div class="font-semibold text-sm">Women Black Colorblocked High-Top Boots</div>
+          <div class="mt-1 text-lg">Rs. 6,749.00</div>
+          <div class="line-through text-gray-400 text-sm">Rs. 8,999.00</div>
+          <button class="w-full mt-3 bg-black text-white py-2 rounded hover:bg-[#a1814f] hover:scale-105 transition duration-300">Choose options</button>
+        </div>
+
+        <!-- Product Card -->
+        <div class="flex-none w-64 bg-white rounded-lg shadow-sm border p-4">
+          <div class="relative group">
+            <img src="images\10.png" alt="Product" class="rounded-lg group-hover:hidden">
+            <img src="images\10.1.png" alt="Product Hover" class="rounded-lg hidden group-hover:block">
+            <span class="absolute top-2 left-2 bg-green-700 text-white text-xs px-2 py-1 rounded">25% Off</span>
+          </div>
+          <div class="mt-4 text-sm text-gray-600">Cobblerz</div>
+          <div class="font-semibold text-sm">Men Tan Wingtip Colourblock Derby Shoes</div>
+          <div class="mt-1 text-lg">Rs. 9,099.00</div>
+          <div class="line-through text-gray-400 text-sm">Rs. 12,999.00</div>
+          <button class="w-full mt-3 bg-black text-white py-2 rounded hover:bg-[#a1814f] transform hover:scale-105 transition duration-300">
+            Choose options
+          </button>
+        </div>
+
+      </div>
+    </div>
+ 
+<!-------------------------------------------------->
+
+    <div class="p-4 space-y-6">
+        <!-- Top Offer Boxes -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-white font-bold">
+            <!-- Button 1 -->
+            <button class="bg-[#b2915f] rounded-lg p-6 text-center w-full hover:bg-[#a1814f] transition duration-300">
+              <p class="text-2xl font-serif">Budget friendly</p>
+              <p class="md:text-5xl mt-1 font-bold">UNDER <br> RS 799</p>
+            </button>
+          
+            <!-- Button 2 -->
+            <button class="bg-[#b2915f] rounded-lg p-6 text-center w-full hover:bg-[#a1814f] transition duration-300">
+              <p class="text-2xl font-serif">TRENDING</p>
+              <p class="md:text-5xl mt-1 font-bold">STYLES <br> RS 799–1499</p>
+            </button>
+          
+            <!-- Button 3 -->
+            <button class="bg-[#b2915f] rounded-lg p-6 text-center w-full hover:bg-[#a1814f] transition duration-300">
+              <p class="text-2xl font-serif">New Arrivals</p>
+              <p class="md:text-5xl mt-1 font-bold">ABOVE <br> RS 1499*</p>
+            </button>
+          </div>
+          
+      
+        <!-- Gender Image Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- For Men -->
+            <button class="relative rounded-xl overflow-hidden focus:outline-none hover:scale-105 transition duration-300">
+              <img src="images/for men.png" alt="For Men" class="w-full h-full object-cover" />
+              <!-- Optional overlay text -->
+              <span class="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded">For Men</span>
+            </button>
+          
+            <!-- For Women -->
+            <button class="relative rounded-xl overflow-hidden focus:outline-none hover:scale-105 transition duration-300">
+              <img src="images/for women.png" alt="For Women" class="w-full h-full object-cover" />
+              <!-- Optional overlay text -->
+              <span class="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded">For Women</span>
+            </button>
+          </div>
+          
+      </div>
+
+      <!-------------------------------------------------->
+
+      <div class="p-6">
+        <!-- Heading -->
+        <h2 class="text-2xl font-bold mb-6">SHOP BY CATEGORY</h2>
+      
+        <!-- Category Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- Card 1 -->
+          <div class="rounded-xl overflow-hidden relative shadow-md">
+            <img src="images\casuals.png" alt="Casuals" class="w-full h-64 object-cover">
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+              <button class="bg-white text-black font-semibold text-sm px-6 py-1 rounded-full shadow">Casuals</button>
+            </div>
+          </div>
+      
+          <!-- Card 2 -->
+          <div class="rounded-xl overflow-hidden relative shadow-md">
+            <img src="images\formals.png" alt="Formals" class="w-full h-64 object-cover">
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+              <button class="bg-white text-black font-semibold text-sm px-6 py-1 rounded-full shadow">Formals</button>
+            </div>
+          </div>
+      
+          <!-- Card 3 -->
+          <div class="rounded-xl overflow-hidden relative shadow-md">
+            <img src="images\party.png" alt="Party" class="w-full h-64 object-cover">
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+              <button class="bg-white text-black font-semibold text-sm px-6 py-1 rounded-full shadow">Party</button>
+            </div>
+          </div>
+      
+          <!-- Card 4 -->
+          <div class="rounded-xl overflow-hidden relative shadow-md">
+            <img src="images\heels.png" alt="Heels" class="w-full h-64 object-cover">
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+              <button class="bg-white text-black font-semibold text-sm px-6 py-1 rounded-full shadow">Heels</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-------------------------------------->
+      
+      <!-- Top Brands Section -->
+<section class="py-10 px-4">
+    <h2 class="text-3xl font-bold mb-8">TOP BRANDS</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 justify-items-center p-4">
+        <a href="https://www.shoetree.io/collections/jove?sort_by=created-descending&filter.v.availability=1&filter.v.price.gte=&filter.v.price.lte=" class="p-4 hover:shadow-lg transition duration-300">
+          <img src="images/jove.png" alt="JOVE" class="h-28" />
+        </a>
+        <a href="https://www.shoetree.io/collections/cobblerz?sort_by=created-descending&filter.v.availability=1&filter.v.price.gte=&filter.v.price.lte=" class="p-4 hover:shadow-lg transition duration-300">
+          <img src="images/cobblerz.png" alt="COBBLERZ" class="h-28" />
+        </a>
+        <a href="https://www.shoetree.io/collections/labotte?srsltid=AfmBOor-rOQ8v4O9OFNz9rhMqtAyaDWq2TPTuVErfnGCLNvfNx_n_kfF" class="p-4 hover:shadow-lg transition duration-300">
+          <img src="images/labotte.png" alt="LA BOTTE" class="h-28" />
+        </a>
+        <a href="https://www.shoetree.io/collections/ronnie-grey?sort_by=created-descending&filter.v.availability=1&filter.v.price.gte=&filter.v.price.lte=" class="p-4 hover:shadow-lg transition duration-300">
+          <img src="images/ronnie grey.png" alt="RONNIE GREY" class="h-28" />
+        </a>
+      </div>
+      
+  </section>
+  
+  <!-- Footer Section -->
+  <footer class="bg-black text-white py-10 px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+      <!-- Information -->
+      <div>
+        <h3 class="font-bold mb-3 uppercase">Information</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">About Us</a></li>
+          <li><a href="#" class="hover:underline">Terms & condition</a></li>
+          <li><a href="#" class="hover:underline">Contact Us</a></li>
+          <li><a href="#" class="hover:underline">Privacy policy</a></li>
+          <li><a href="#" class="hover:underline">Sell With Us</a></li>
+          <li><a href="#" class="hover:underline">Offer T&amp;C</a></li>
+          <li><a href="#" class="hover:underline">Store Locator</a></li>
+          <li><a href="#" class="hover:underline">Blogs</a></li>
+        </ul>
+      </div>
+  
+      <!-- Customer Service -->
+      <div>
+        <h3 class="font-bold mb-3 uppercase">Customer Service</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">Return & Exchange</a></li>
+          <li><a href="#" class="hover:underline">Shipping Policy</a></li>
+          <li><a href="#" class="hover:underline">FAQ's</a></li>
+          <li><a href="#" class="hover:underline">Create Return & Exchange</a></li>
+        </ul>
+      </div>
+  
+      <!-- Sign Up and Save -->
+      <div>
+        <h3 class="font-bold mb-3 uppercase">Sign Up and Save</h3>
+        <div class="flex items-center border border-white p-2 rounded mb-4">
+          <input type="email" placeholder="Email" class="bg-black text-white w-full outline-none px-2">
+          <button class="ml-2 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </button>
+        </div>
+        <div class="flex space-x-4">
+          <a href="#" class="text-xl"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-xl"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+  
+      <!-- Reach At Us -->
+      <div>
+        <h3 class="font-bold mb-3 uppercase">Reach at us</h3>
+        <p class="font-semibold">Shubh Footwear Products Pvt. Ltd.</p>
+        <p class="text-sm mt-1 leading-relaxed">
+          Shop No A-41 & 42, Second Floor, Palam Extension, Near Dwarka Sector-7,<br>
+          New Delhi -110075
+        </p>
+      </div>
+    </div>
+  </footer>
+
+ <!------------------------ Bottom Footer --------------------->  
+
+  </div>
+</body>
+</html>
